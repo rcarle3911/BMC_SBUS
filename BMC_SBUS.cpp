@@ -19,7 +19,7 @@ SBUS ©FUTABA CORPORATION 2016.
 
 #include "BMC_SBUS.h"
 
-void BMC_SBUS::BMC_SBUS(HardwareSerial *_serialport)
+BMC_SBUS::BMC_SBUS(HardwareSerial *_serialport)
 {
   //In order to use multiple serial ports. Pass the desired serial pointer.
   this->serialport = _serialport;

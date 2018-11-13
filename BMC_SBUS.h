@@ -9,7 +9,7 @@
 class BMC_SBUS
 {
 	public:
-		BMC_SBUS(HardwareSerial* _serialport)
+		BMC_SBUS(HardwareSerial* _serialport);
 		uint8_t sbusData[25];
 		int16_t servos[18];
 		void begin(void);
