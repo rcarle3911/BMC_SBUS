@@ -19,6 +19,12 @@ SBUS ©FUTABA CORPORATION 2016.
 
 #include "BMC_SBUS.h"
 
+void BMC_SBUS::BMC_SBUS(HardwareSerial *_serialport)
+{
+  //In order to use multiple serial ports. Pass the desired serial pointer.
+  this->serialport = _serialport;
+}
+
 void BMC_SBUS::begin()
 {
   //intialise private data arrays
@@ -33,7 +39,7 @@ void BMC_SBUS::begin()
 
   //setup serial port to transmit at 100k baud and use 1 parity and 2 stop bits
 
-  SERIALPORT.begin(BAUDRATE, SERIAL_8E2);
+  serialport->begin(BAUDRATE, SERIAL_8E2);
 
   //setup public data arrays
 
@@ -55,7 +61,7 @@ void BMC_SBUS::Servo(uint8_t ch, int16_t position)
 void BMC_SBUS::Send(void)
 {
   //send data over serial port
-  SERIALPORT.write(sbusData, 25); //according to docs for Serial we can send the array along as is without a loop
+  serialport->write(sbusData, 25); //according to docs for Serial we can send the array along as is without a loop
 }
 
 void BMC_SBUS::Update(void) 
