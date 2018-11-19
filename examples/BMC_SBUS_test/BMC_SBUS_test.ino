@@ -1,5 +1,7 @@
 #include <BMC_SBUS.h>
-BMC_SBUS mySBUS; 
+
+// Pass in a reference to the serial object. May use &Serial1, &Serial2, &Serial3 for Mega.
+BMC_SBUS mySBUS(&Serial); 
 
 /*
 sketch uses a single mode button which flicks between 4 different modes

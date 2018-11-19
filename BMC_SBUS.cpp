@@ -62,7 +62,7 @@ void BMC_SBUS::Send(void)
 {
   //send data over serial port
 
-  serialport->write(~sbusData, 25); //according to docs for Serial we can send the array along as is without a loop
+  serialport->write(sbusData, 25); //according to docs for Serial we can send the array along as is without a loop
 }
 
 void BMC_SBUS::Update(void) 
