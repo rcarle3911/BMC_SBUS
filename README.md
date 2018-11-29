@@ -52,8 +52,5 @@ will format all 16 servo channels into a valid sbus data frame
 
 will send the currently defined frame out over the serial port
 
-the serial port to use is defined in the header file and defaults to the standard Serial
-you can change that to Serial1 or whatever if you have a board with more than 1 HW serial port
-
 the library and example sketches are heavily commented so please take a look there for more info
 
