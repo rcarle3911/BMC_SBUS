@@ -27,7 +27,7 @@ to create a new instance:
 
 ```
 #include <BMC_SBUS.h>
-BMC_SBUS mySBUS;
+BMC_SBUS mySBUS(&Serial);
 ```
 
 then make sure you initialise this in the setup function of your sketch:
@@ -56,14 +56,4 @@ the serial port to use is defined in the header file and defaults to the standar
 you can change that to Serial1 or whatever if you have a board with more than 1 HW serial port
 
 the library and example sketches are heavily commented so please take a look there for more info
-
-NOTE: if you are using an arduino board with more than one HW serial bus you may need to change this line in the header file of the library:
-
-`#define SERIALPORT Serial`
-
-to:
-
-`#define SERIALPORT Serial1`
-
-
 
